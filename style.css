@@ -7,11 +7,11 @@
 
 body{
     display:grid ;
-    background-color: #0f0f1a;
-    color: #f3f4;
-    grid-template-columns:20% 60% 20% ;
-    grid-template-rows: auto;
-    min-height: 100vh;
+    background: radial-gradient(circle at 30% 20%, #1a1a2e, #0f0f1a);
+    color: #f3f4f6;
+    grid-template-columns:10% 50% 40%;
+    height: 100vh;
+    grid-template-rows: auto auto 1fr auto;
     grid-template-areas:
     "nav nav nav"
     "header header header"
@@ -19,16 +19,16 @@ body{
     "footer footer footer"
 }
 
-
 header {
-    background-color: blue;
+    background-color:#141427;
     color: white;
-    padding: 20px;
+    padding: 2px;
     grid-area: header;
 }
 
+
 nav{ 
-    background-color: #141427;
+    background-color: transparent;
     grid-area: nav;
     padding: 20px 80px;
 }
@@ -49,24 +49,45 @@ nav ul{
     justify-content: space-around;
 }
 
+
 main{
     background-color: #141427;
     color: white;
     grid-area: main;
-    padding: 40px;
+    padding: 120px 40px 40px 60px;
+
+
+}
+
+main h1,
+main h3{
+    margin: 6px 0;
+    text-align: left;
 }
 
 aside{
     background-color: lightgreen;
     grid-area: aside;
 
+
+}
+
+
+aside img{ 
+    width: 75%;
+    height: auto;
+    border-radius: 50%;
+    background-color: radial-gradient(circle at 30% 20%, #1b1f3b, #0b0f25);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(120, 100, 255, 0.3);
 }
 
 footer{
     background-color:darkgreen;
     color: white;
     grid-area: footer;
-    padding: 10px;
+    padding: 6px 12px; 
+    max-height: 40px; 
 }
 
 h1{
@@ -88,4 +109,16 @@ h3{
 
 .accent{
     color: #f8f8ff;
+}
+
+header{
+background-color:#141427;
+}
+
+aside{
+background-color:transparent;
+}
+
+footer{
+background-color:#141427;
 }
