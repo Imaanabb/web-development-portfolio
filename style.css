@@ -9,13 +9,13 @@ body{
     display:grid ;
     background: radial-gradient(circle at 30% 20%, #1a1a2e, #0f0f1a);
     color: #f3f4f6;
-    grid-template-columns:10% 50% 40%;
+    grid-template-columns: 1fr 1fr ;
     height: 100vh;
     grid-template-rows: auto auto 1fr auto;
     grid-template-areas:
     "nav nav nav"
     "header header header"
-    "main main aside"
+    "main main main"
     "footer footer footer"
 }
 
@@ -51,35 +51,30 @@ nav ul{
 
 
 main{
-    background-color: #141427;
-    color: white;
-    grid-area: main;
-    padding: 120px 40px 40px 60px;
-
-
+grid-area: main;
+display:grid;
+grid-template-columns: 1fr 1fr;
+align-items:center;
+padding:120px 400px;
 }
 
-main h1,
-main h3{
-    margin: 6px 0;
+main section{
+    justify-self: start;
     text-align: left;
-}
-
-aside{
-    background-color: lightgreen;
-    grid-area: aside;
-
-
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 
-aside img{ 
-    width: 75%;
-    height: auto;
-    border-radius: 50%;
-    background-color: radial-gradient(circle at 30% 20%, #1b1f3b, #0b0f25);
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(120, 100, 255, 0.3);
+
+ main img{
+width: 345px;
+height:345px;
+border-radius: 50%;
+padding:20px;
+box-shadow:0 4px 8px rgba(120,100,255,0.3);
+animation: avatarSwitch 5s infinite;
 }
 
 footer{
@@ -119,6 +114,20 @@ aside{
 background-color:transparent;
 }
 
-footer{
-background-color:#141427;
+@keyframes avatarSwitch {
+    0% {
+        content: url('images/avatar1.png');
+    }
+    20% {
+        content: url('images/avatar2.png');
+    }
+    40% {
+        content: url('images/avatar3.png');
+    }
+    60% {
+        content: url('images/avatar4.png');
+    }
+    80% {
+        content: url('images/avatar5.png');
+    } 
 }
