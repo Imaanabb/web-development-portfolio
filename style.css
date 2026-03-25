@@ -200,3 +200,38 @@ text-shadow:
     gap: 85px;
 }
 
+/* PROJECTS */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+.projects section {
+    background: #111827;
+    padding: 40px;
+    border-radius: 15px;
+    min-height: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(120,100,255,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.projects section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(120,100,255,0.5);
+}
+
+h1{
+    color:#c4b5fd;
+      font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  padding-top: 25px;
+}
