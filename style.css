@@ -300,15 +300,38 @@ width: 200px;
     }
 
     main {
-        padding: 20px;
+        padding: 40px 20px;
     }
 
     .projects {
         grid-template-columns: 1fr;
     }
-}
+    main img {
+        width: 200px;
+        height: 200px;
+        margin-left: 0;
+        display: block;
+    }
+
 nav ul {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
+    padding: 0;
+}
+nav li{
+    width: 100%;
+}
+nav a{
+    font-size: 12px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+form {
+    grid-template-columns: 1fr;
+    max-width: 200x;
+    margin: 0 auto;
+}
 }
