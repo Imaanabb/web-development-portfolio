@@ -1,47 +1,69 @@
+/* Importing Google font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Resetting default browser margin and padding */
 *{
 
     margin: 0;
     padding:0;
 }
-
+/* Using CSS Grid to structure the entire layout */
 body{
     display:grid ;
-    background: radial-gradient(circle at 30% 20%, #1a1a2e, #0f0f1a);
+    background:black;
     color: #f3f4f6;
-    grid-template-columns:10% 50% 40%;
+    /* Two column */
+    grid-template-columns: 1fr 1fr ;
     height: 100vh;
+    /* Page sections */
     grid-template-rows: auto auto 1fr auto;
     grid-template-areas:
     "nav nav nav"
     "header header header"
-    "main main aside"
+    "main main main"
     "footer footer footer"
 }
-
+/* Header styling */
 header {
-    background-color:#141427;
-    color: white;
+    background-color: #000000;
+    color: #c4b5fd;
     padding: 2px;
     grid-area: header;
+    font-family: "Montserrat", sans-serif;
+    padding: 6px 12px; 
 }
 
-
+/* Styling navigation bar and spacing */
 nav{ 
     background-color: transparent;
     grid-area: nav;
     padding: 20px 80px;
 }
-
+/* Styling navigation anchors */
 nav a{
     font-family: "Montserrat", sans-serif;
     text-decoration: none;
     color: #c4b5fd;
     margin-left: 25px;
-    font-weight: 500;
+    font-weight: 600;
 }
+/* Hover effect with glow */
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #8b5cf6;
 
-
+    /* Underline animation */
+}
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #c4b5fd;
+    transition: width 0.3s ease;
+}
+nav a:hover::after {
+    width: 100%;
+}
 nav ul{
     list-style-type: none;
     display: flex;
@@ -49,76 +71,368 @@ nav ul{
     justify-content: space-around;
 }
 
-
+/* Split into two columns text and image */
 main{
-    background-color: #141427;
-    color: white;
-    grid-area: main;
-    padding: 120px 40px 40px 60px;
-
-
+grid-area: main;
+display:grid;
+grid-template-columns: 1fr 1fr;
+align-items:center;
+padding:120px 400px;
 }
 
-main h1,
-main h3{
-    margin: 6px 0;
+main section{
+    justify-self: start;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-aside{
-    background-color: lightgreen;
-    grid-area: aside;
-
-
+/* Profile image styling with glow effect and animation */
+/* Assisted by Chat GPT for animations and glow effect, as was not working */
+.avatar{
+width: 345px;
+height:345px;
+border-radius: 50%;
+padding:20px;
+margin-left:100px;
+box-shadow:0 4px 8px rgba(120,100,255,0.3);
+/* Animation to switch images */
+animation: avatarSwitch 5s infinite;
+box-shadow:
+/* Glow effect */
+0 0 15px rgba(139,92,246,0.8),
+0 0 35px rgba(139,92,246,0.6),
+0 0 70px rgba(139,92,246,0.4);
 }
 
 
-aside img{ 
-    width: 75%;
-    height: auto;
-    border-radius: 50%;
-    background-color: radial-gradient(circle at 30% 20%, #1b1f3b, #0b0f25);
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(120, 100, 255, 0.3);
-}
 
+/* Footer style */
 footer{
-    background-color:darkgreen;
-    color: white;
+    background-color: #05050a;
+    color: #c4b5fd;
+     font-family: "Montserrat", sans-serif;
+     text-align: center;
     grid-area: footer;
     padding: 6px 12px; 
     max-height: 40px; 
 }
-
+/* Headings colours and fonts */
 h1{
     color:#c4b5fd;
       font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
+    font-weight: 700;
+    font-style: normal;
 
 }
 
-h3{
+h2{
     color:#c4b5fd;
       font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
+    font-weight: 500;
+    font-style: normal;
 }
-
+/* Classes */
 .accent{
     color: #f8f8ff;
 }
 
-header{
-background-color:#141427;
+.accent2{
+    color: #a78bfa;
 }
+
 
 aside{
 background-color:transparent;
 }
 
-footer{
-background-color:#141427;
+/* Keyframe animation cycles through different avatar images, assisted by ChatGPT */
+@keyframes avatarSwitch {
+    0% {
+        content: url('images/avatar1.png');
+    }
+    20% {
+        content: url('images/avatar2.png');
+    }
+    40% {
+        content: url('images/avatar3.png');
+    }
+    60% {
+        content: url('images/avatar4.png');
+    }
+    80% {
+        content: url('images/avatar5.png');
+    } 
+}
+i{
+    color: #c4b5fd;
+    font-size: 24px;
+    margin-top: 20px;
+}
+/* Assisted by ChatGPT */
+i:hover {
+transform:scale(1.3);
+text-shadow:
+0 0 10px #a78bfa,
+0 0 20px #8b5cf6,
+0 0 40px #7c3aed;
+}
+/* Buttons styling for links */
+.buttons{   
+    display: flex;
+    gap: 20px;
+    
+}
+/* buttons appearance - inspiration from youtube - within report */
+.buttons a{
+    background-color: #8b5cf6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+}
+/* Hover animation for buttons */
+.buttons a:hover {
+    background-color: #000000;
+    transform: scale(1.15);
+}
+/* Glow effect assisted by Co-pilot */
+.buttons a:hover {
+    box-shadow:
+0 0 15px rgba(139,92,246,0.8),
+0 0 35px rgba(139,92,246,0.6),
+0 0 70px rgba(139,92,246,0.4);
+}
+
+
+.social-icons{
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    gap: 85px;
+}
+
+/* PROJECTS */
+/* Grid layout for projects page */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 80px ;
+}
+/* Projects cards */
+/* Assisted by ChatGPT */
+.projects section {
+    background: #111827;
+    padding: 40px;
+    border-radius: 15px;
+    min-height: 169px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(120,100,255,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Animation for hover effect - assisted by Chatgpt */
+.projects section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(120,100,255,0.5);
+}
+
+h1{
+    color:#c4b5fd;
+      font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    padding-top: 25px;
+}
+
+/* CONTACT HTML */
+
+.contact-page main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-title{
+    color:#c4b5fd;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+  
+
+}
+/* Form layout using grid */
+form {
+display: grid;
+grid-template-columns: 50% 50%;
+row-gap: 1em;
+align-items: center;
+width: 400px;
+}
+
+
+/* Styling for input */
+/* Slides */
+input[type="submit"] {
+grid-column: 2;
+}
+
+form label {
+color: #c4b5fd;
+font-family: "Montserrat", sans-serif;
+font-weight: 500;
+}
+
+/* Assisted by Chatgpt as was not working efficiently */
+input, textarea {
+align-content: center;
+padding:15px;
+background-color: #111827;
+border: none;
+border-radius: 5px;
+color: #c4b5fd;
+font-family: "Montserrat", sans-serif;
+width: 200px;
+
+}
+
+/* MOBILE OPTIMIZATION */
+/* Switching layout to single column */
+/* Reducing space for smaller screens */
+/* Assisted by ChatGPT */
+@media screen and (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "nav"
+            "header"
+            "main"
+            "footer";
+    }
+
+    main {
+        /* reducing space */
+        padding: 30px;
+        margin: 0 auto;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+    /* Re-sizing the images for smaller screens */
+    main img {
+        width: 200px;
+        height: 200px;
+        margin-left: 0;
+        display: block;
+    }
+
+nav ul {
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+}
+nav li{
+    width: 100%;
+}
+/* Making the navigation more smaller */
+nav a{
+    font-size: 12px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Adjusting the form layout for mobile and tablets */
+form{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    max-width: 300px;
+    margin:0 auto;
+}
+}
+
+/* REPORT */
+/* Styling report container */
+.report-container{
+    background: white;
+    color: #000000;
+    width: 90%;
+    max-width: 1200px;
+    padding: 50px;
+    margin:80px;
+    border-radius: 10px;
+    font-size: 18px;
+
+}
+/* Centering report */
+.report-page main{
+    display: flex;
+    justify-content: center;
+    width: 100;
+    padding: 0;
+}
+/* Headings */
+.report-container h1{
+    text-align: center;
+    font-size: 45px;
+
+}
+.report-container h2{
+    font-size: 20px;
+    margin-top: 30px;
+}
+/* Styling images in report */
+.design-image{
+    text-align: center;
+    margin: 20px;
+}
+
+.design-image img{
+    width: 100%;
+    max-width: 500px;
+    border-radius:10px;
+}
+
+.validation-screenshots{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin:20px;
+    gap: 25px;
+}
+.validation-screenshots img{
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+    
+/* Demo page */
+/* Assisted by Chat GPT */
+
+.demo-page{
+    display: block;
+    flex-direction: column;
+    align-items: center;
+}
+.demo-page h1{
+    margin-bottom: 30px;
+}
+
+video {
+    width: 90%;
+    max-width: 1200x;
+    
 }
