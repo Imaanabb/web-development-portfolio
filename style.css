@@ -235,3 +235,53 @@ h1{
   text-align: center;
   padding-top: 25px;
 }
+
+/* CONTACT HTML */
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    box-shadow: #c4b5fd 0px 0px 10px, #c4b5fd 0px 0px 20px, #c4b5fd 0px 0px 30px;
+}
+.contact-title{
+    color:#c4b5fd;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+  
+
+}
+
+form {
+display: grid;
+grid-template-columns: 50% 50%;
+row-gap: 0.5em;
+align-items: center;
+width: 400px;
+}
+
+
+
+input[type="submit"] {
+grid-column: 2;
+}
+
+form label {
+color: #c4b5fd;
+font-family: "Montserrat", sans-serif;
+font-weight: 500;
+}
+
+input, textarea {
+align-content: center;
+padding:10px;
+background-color: #111827;
+border: none;
+border-radius: 5px;
+color: #c4b5fd;
+font-family: "Montserrat", sans-serif;
+}
+
+
