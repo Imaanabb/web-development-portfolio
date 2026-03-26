@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Imaan's Portfolio</title>
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <!-- Font awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 <body class="contact-page">
+    <!-- Header display name -->
 <header> ● Imaan</header>
+
+<!-- Navigation bar  -->
 <nav>
     <ul>
         <li><a href="index.html">Home</a></li>
@@ -19,30 +24,34 @@
         <li><a href="report.html">Report</a></li>
     </ul>
 </nav>
-
+<!-- Main content -->
 <main>
+    <!-- Contact Page heading -->
 <h1 class="contact-title">Contact Me</h1>
 
+<!-- Contact form which uses GET method -->
     <form action="#" method="get">
-
+<!-- Name input from user -->
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
+<!-- Email input from user -->
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
-
+<!-- Message input -->
         <label for="message">Message:</label>
         <textarea name="message" id="message"></textarea>
-
+<!-- Send button -->
         <input type="submit" value="Send">
 
     </form>
-
+<!-- Mail server (where the message should be mailed to) -->
     <form action="mailto:imaan.abbasi2@gmail.com" method="post" enctype="text/plain">
 </form>
 
 </main>
 <footer>
+    <!-- Footer section -->
     <p>&copy; 2026 Imaan Abbasi. All rights reserved.</p>
 </footer>
 

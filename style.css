@@ -1,16 +1,20 @@
+/* Importing Google font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Resetting default browser margin and padding */
 *{
 
     margin: 0;
     padding:0;
 }
-
+/* Using CSS Grid to structure the entire layout */
 body{
     display:grid ;
     background:black;
     color: #f3f4f6;
+    /* Two column */
     grid-template-columns: 1fr 1fr ;
     height: 100vh;
+    /* Page sections */
     grid-template-rows: auto auto 1fr auto;
     grid-template-areas:
     "nav nav nav"
@@ -18,7 +22,7 @@ body{
     "main main main"
     "footer footer footer"
 }
-
+/* Header styling */
 header {
     background-color: #000000;
     color: #c4b5fd;
@@ -28,13 +32,13 @@ header {
     padding: 6px 12px; 
 }
 
-
+/* Styling navigation bar and spacing */
 nav{ 
     background-color: transparent;
     grid-area: nav;
     padding: 20px 80px;
 }
-
+/* Styling navigation anchors */
 nav a{
     font-family: "Montserrat", sans-serif;
     text-decoration: none;
@@ -42,10 +46,12 @@ nav a{
     margin-left: 25px;
     font-weight: 600;
 }
+/* Hover effect with glow */
 nav a:hover {
     color: #ffffff;
     text-shadow: 0 0 10px #8b5cf6;
 
+    /* Underline animation */
 }
 nav a::after {
     content: '';
@@ -65,7 +71,7 @@ nav ul{
     justify-content: space-around;
 }
 
-
+/* Split into two columns text and image */
 main{
 grid-area: main;
 display:grid;
@@ -82,7 +88,8 @@ main section{
     gap: 20px;
 }
 
-
+/* Profile image styling with glow effect and animation */
+/* Assisted by Chat GPT for animations and glow effect, as was not working */
 .avatar{
 width: 345px;
 height:345px;
@@ -90,8 +97,10 @@ border-radius: 50%;
 padding:20px;
 margin-left:100px;
 box-shadow:0 4px 8px rgba(120,100,255,0.3);
+/* Animation to switch images */
 animation: avatarSwitch 5s infinite;
 box-shadow:
+/* Glow effect */
 0 0 15px rgba(139,92,246,0.8),
 0 0 35px rgba(139,92,246,0.6),
 0 0 70px rgba(139,92,246,0.4);
@@ -99,7 +108,7 @@ box-shadow:
 
 
 
-
+/* Footer style */
 footer{
     background-color: #05050a;
     color: #c4b5fd;
@@ -109,7 +118,7 @@ footer{
     padding: 6px 12px; 
     max-height: 40px; 
 }
-
+/* Headings colours and fonts */
 h1{
     color:#c4b5fd;
       font-family: "Montserrat", sans-serif;
@@ -124,7 +133,7 @@ h2{
     font-weight: 500;
     font-style: normal;
 }
-
+/* Classes */
 .accent{
     color: #f8f8ff;
 }
@@ -138,6 +147,7 @@ aside{
 background-color:transparent;
 }
 
+/* Keyframe animation cycles through different avatar images, assisted by ChatGPT */
 @keyframes avatarSwitch {
     0% {
         content: url('images/avatar1.png');
@@ -160,6 +170,7 @@ i{
     font-size: 24px;
     margin-top: 20px;
 }
+/* Assisted by ChatGPT */
 i:hover {
 transform:scale(1.3);
 text-shadow:
@@ -167,12 +178,13 @@ text-shadow:
 0 0 20px #8b5cf6,
 0 0 40px #7c3aed;
 }
-
+/* Buttons styling for links */
 .buttons{   
     display: flex;
     gap: 20px;
     
 }
+/* buttons appearance - inspiration from youtube - within report */
 .buttons a{
     background-color: #8b5cf6;
     color: white;
@@ -182,10 +194,12 @@ text-shadow:
     font-weight: 400;
     font-family: "Montserrat", sans-serif;
 }
+/* Hover animation for buttons */
 .buttons a:hover {
     background-color: #000000;
     transform: scale(1.15);
 }
+/* Glow effect assisted by Co-pilot */
 .buttons a:hover {
     box-shadow:
 0 0 15px rgba(139,92,246,0.8),
@@ -202,6 +216,7 @@ text-shadow:
 }
 
 /* PROJECTS */
+/* Grid layout for projects page */
 .projects {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -210,6 +225,8 @@ text-shadow:
     margin: 0 auto;
     padding: 80px ;
 }
+/* Projects cards */
+/* Assisted by ChatGPT */
 .projects section {
     background: #111827;
     padding: 40px;
@@ -222,6 +239,7 @@ text-shadow:
     box-shadow: 0 4px 8px rgba(120,100,255,0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+/* Animation for hover effect - assisted by Chatgpt */
 .projects section:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(120,100,255,0.5);
@@ -252,7 +270,7 @@ h1{
   
 
 }
-
+/* Form layout using grid */
 form {
 display: grid;
 grid-template-columns: 50% 50%;
@@ -262,7 +280,8 @@ width: 400px;
 }
 
 
-
+/* Styling for input */
+/* Slides */
 input[type="submit"] {
 grid-column: 2;
 }
@@ -273,6 +292,7 @@ font-family: "Montserrat", sans-serif;
 font-weight: 500;
 }
 
+/* Assisted by Chatgpt as was not working efficiently */
 input, textarea {
 align-content: center;
 padding:15px;
@@ -286,6 +306,9 @@ width: 200px;
 }
 
 /* MOBILE OPTIMIZATION */
+/* Switching layout to single column */
+/* Reducing space for smaller screens */
+/* Assisted by ChatGPT */
 @media screen and (max-width: 768px) {
     body {
         grid-template-columns: 1fr;
@@ -297,6 +320,7 @@ width: 200px;
     }
 
     main {
+        /* reducing space */
         padding: 30px;
         margin: 0 auto;
     }
@@ -304,6 +328,7 @@ width: 200px;
     .projects {
         grid-template-columns: 1fr;
     }
+    /* Re-sizing the images for smaller screens */
     main img {
         width: 200px;
         height: 200px;
@@ -320,6 +345,7 @@ nav ul {
 nav li{
     width: 100%;
 }
+/* Making the navigation more smaller */
 nav a{
     font-size: 12px;
     display: block;
@@ -328,7 +354,7 @@ nav a{
     padding: 10px 0;
 }
 
-
+/* Adjusting the form layout for mobile and tablets */
 form{
     display: grid;
     grid-template-columns: 1fr;
@@ -339,6 +365,7 @@ form{
 }
 
 /* REPORT */
+/* Styling report container */
 .report-container{
     background: white;
     color: #000000;
@@ -350,13 +377,14 @@ form{
     font-size: 18px;
 
 }
+/* Centering report */
 .report-page main{
     display: flex;
     justify-content: center;
     width: 100;
     padding: 0;
 }
-
+/* Headings */
 .report-container h1{
     text-align: center;
     font-size: 45px;
@@ -366,7 +394,7 @@ form{
     font-size: 20px;
     margin-top: 30px;
 }
-
+/* Styling images in report */
 .design-image{
     text-align: center;
     margin: 20px;
@@ -378,4 +406,33 @@ form{
     border-radius:10px;
 }
 
+.validation-screenshots{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin:20px;
+    gap: 25px;
+}
+.validation-screenshots img{
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
     
+/* Demo page */
+/* Assisted by Chat GPT */
+
+.demo-page{
+    display: block;
+    flex-direction: column;
+    align-items: center;
+}
+.demo-page h1{
+    margin-bottom: 30px;
+}
+
+video {
+    width: 90%;
+    max-width: 1200x;
+    
+}
