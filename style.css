@@ -367,5 +367,15 @@ form{
     margin-top: 30px;
 }
 
+.design-image{
+    text-align: center;
+    margin: 20px;
+}
+
+.design-image img{
+    width: 100%;
+    max-width: 500px;
+    border-radius:10px;
+}
 
     
